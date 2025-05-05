@@ -158,12 +158,6 @@ class ChangeLanguage: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-extension ChangeLanguage: OtherDelegate {
-    func test() {
-        print("========= test =====")
-    }
-}
-
 extension ChangeLanguage: DateTimePickerDelegate {
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
         

@@ -20,7 +20,7 @@ class HomeTableViewCell: UITableViewCell {
         viewCell.layer.cornerRadius = 15
         viewCell.layer.masksToBounds = false
         labelContent.textAlignment = .left
-        labelContent.numberOfLines = 0
+        labelContent.numberOfLines = 3
         labelContent.contentMode = .top
         // Initialization code
     }

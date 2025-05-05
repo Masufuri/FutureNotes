@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FutureNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="FutureNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FRw-qa-20w">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -361,16 +361,16 @@
             </objects>
             <point key="canvasLocation" x="3991.6030534351144" y="1564.7887323943662"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="ytG-rW-hgh">
             <objects>
-                <viewController id="IbB-Tg-FPc" customClass="ViewController" customModule="FutureNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IbB-Tg-FPc" customClass="HomeViewController" customModule="FutureNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="28w-TN-BEg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-is-eQZ">
-                                <rect key="frame" x="0.0" y="125" width="393" height="644"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Notebook-rafiki" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-MW-Nxb">
@@ -385,58 +385,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="3xv-F5-3Ww">
-                                <rect key="frame" x="24" y="47" width="345" height="55"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ep-xv-hLw">
-                                        <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="55"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="kEd-Bs-fev"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="43"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8Ym-bu-Ncg">
-                                        <rect key="frame" x="295" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="4ot-8i-xh9"/>
-                                            <constraint firstAttribute="width" constant="50" id="XEV-j1-eHI"/>
-                                            <constraint firstAttribute="width" secondItem="8Ym-bu-Ncg" secondAttribute="height" multiplier="1:1" id="cMN-P8-5Nf"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="Lby-YJ-KlM"/>
-                                    <constraint firstItem="8Ym-bu-Ncg" firstAttribute="top" secondItem="3xv-F5-3Ww" secondAttribute="top" id="Q2E-5c-0RF"/>
-                                    <constraint firstItem="7Ep-xv-hLw" firstAttribute="top" secondItem="3xv-F5-3Ww" secondAttribute="top" id="c78-91-QxP"/>
-                                    <constraint firstItem="7Ep-xv-hLw" firstAttribute="leading" secondItem="3xv-F5-3Ww" secondAttribute="leading" id="ddv-B0-9ch"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Ym-bu-Ncg" secondAttribute="trailing" id="udh-Wa-aKz"/>
-                                </constraints>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O39-Mk-gDd"/>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fqv-is-eQZ" firstAttribute="leading" secondItem="O39-Mk-gDd" secondAttribute="leading" id="1KD-SW-GwA"/>
                             <constraint firstItem="5g8-MW-Nxb" firstAttribute="centerX" secondItem="28w-TN-BEg" secondAttribute="centerX" id="4Wn-eS-A74"/>
+                            <constraint firstItem="fqv-is-eQZ" firstAttribute="top" secondItem="O39-Mk-gDd" secondAttribute="top" id="6bI-pC-jgo"/>
                             <constraint firstItem="O39-Mk-gDd" firstAttribute="bottom" secondItem="fqv-is-eQZ" secondAttribute="bottom" id="DPt-KN-omQ"/>
-                            <constraint firstItem="3xv-F5-3Ww" firstAttribute="top" secondItem="28w-TN-BEg" secondAttribute="top" constant="47" id="PXd-Ny-Zwy"/>
                             <constraint firstItem="O39-Mk-gDd" firstAttribute="trailing" secondItem="fqv-is-eQZ" secondAttribute="trailing" id="bhb-XS-zOD"/>
                             <constraint firstItem="5g8-MW-Nxb" firstAttribute="centerY" secondItem="28w-TN-BEg" secondAttribute="centerY" constant="-10" id="fUo-tq-dpY"/>
                             <constraint firstItem="5g8-MW-Nxb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O39-Mk-gDd" secondAttribute="leading" constant="30" id="fe8-ue-zRb"/>
-                            <constraint firstItem="3xv-F5-3Ww" firstAttribute="leading" secondItem="O39-Mk-gDd" secondAttribute="leading" constant="24" id="k8m-Pq-aRm"/>
                             <constraint firstItem="GZF-IE-xcc" firstAttribute="centerX" secondItem="28w-TN-BEg" secondAttribute="centerX" id="nig-lf-ijL"/>
-                            <constraint firstItem="O39-Mk-gDd" firstAttribute="trailing" secondItem="3xv-F5-3Ww" secondAttribute="trailing" constant="24" id="oGn-ab-ZPj"/>
                             <constraint firstItem="GZF-IE-xcc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="28w-TN-BEg" secondAttribute="leading" constant="30" id="ocj-cC-nII"/>
                             <constraint firstItem="GZF-IE-xcc" firstAttribute="top" secondItem="5g8-MW-Nxb" secondAttribute="bottom" constant="6" id="trs-7E-4Kl"/>
-                            <constraint firstItem="fqv-is-eQZ" firstAttribute="top" secondItem="3xv-F5-3Ww" secondAttribute="bottom" constant="23" id="u4s-iF-jUe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ag0-xn-iNi"/>
                     <connections>
                         <outlet property="createFirstNote" destination="GZF-IE-xcc" id="OC0-s0-3kx"/>
-                        <outlet property="hometitle" destination="7Ep-xv-hLw" id="hUK-D9-nba"/>
                         <outlet property="picCreateFirstNote" destination="5g8-MW-Nxb" id="YFL-pR-pHM"/>
                         <outlet property="tableView" destination="fqv-is-eQZ" id="uZg-O5-tCB"/>
                     </connections>
@@ -506,10 +473,11 @@
         <!--Home-->
         <scene sceneID="mc5-Us-vub">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rsa-FK-arV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rsa-FK-arV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="b6K-eu-VWT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XDL-S0-80A">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -531,7 +499,6 @@
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="searchIcon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

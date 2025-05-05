@@ -5,9 +5,9 @@
 //  Created by Other on 15/4/25.
 //
 
-import UIKit
 import Alamofire
 import SnapKit
+import UIKit
 
 extension UIColor {
     convenience init(hex: String) {
@@ -30,12 +30,12 @@ extension UIColor {
 
 class SettingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var settingTitle:UILabel!
+    @IBOutlet var settingTitle: UILabel!
     var cells: [SettingModel] = SettingModel.allCases
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         settingTitle.text = LocalizationManager.shared.localizedString(forKey: "setting_tab")
 
         // Đăng ký nib
@@ -44,18 +44,14 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
 
         tableView.dataSource = self
         tableView.delegate = self
-        
+
         tableView.backgroundColor = .clear
-        
-        
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: Notification.Name("languageDidChange"), object: nil)
 
         // Do any additional setup after loading the view.
-        
     }
-    
-    
+
     @objc func languageChanged() {
         tabBarController?.tabBar.items?[0].title = LocalizationManager.shared.localizedString(forKey: "home_tab")
         tabBarController?.tabBar.items?[2].title = LocalizationManager.shared.localizedString(forKey: "setting_tab")
@@ -63,44 +59,42 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
     }
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cells.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! CustomTableViewCell
-        
+
         cell.label?.text = cells[indexPath.row].name
         cell.backgroundColor = UIColor.clear
         cell.label?.textColor = .white
-        cell.label.font = R.font.poppinsMedium(size: 30)
-        
+        cell.label.font = R.font.poppinsMedium(size: 16)
+
         cell.selectionStyle = .none
 
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "changeLanguage")
         if indexPath.row == 0 {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
-            
         }
 //        callAPI()
     }
-    
+
 //    func callAPI() {
 //        let response = AF.request(MyRequest())
-//            
+//
 //        response.response { response in
 //            let model = try? JSONDecoder().decode(DataResponseModel.self, from: response.data!)
 //            self.settingTitle.text = model?.message
 //            print(model?.message)
 //        }
-//        
+//
 //        response.resume()
 //    }
 
@@ -109,17 +103,17 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         header.backgroundColor = UIColor.clear
         let viewContainer = UIView()
         viewContainer.backgroundColor = UIColor(hex: "#393535")
-        
+
         let spacer = UIView()
         spacer.backgroundColor = .clear
-        
+
         header.addSubview(viewContainer)
         viewContainer.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalTo(16)
             make.trailing.equalTo(-16)
         }
-        
+
         header.addSubview(spacer)
         spacer.snp.makeConstraints { make in
             make.top.equalTo(viewContainer.snp.bottom)
@@ -128,7 +122,7 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         viewContainer.layer.cornerRadius = 12
         viewContainer.layer.masksToBounds = true
-        
+
         // Tính kích thước đúng
         header.layoutIfNeeded()
 
@@ -168,15 +162,15 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
      */
 }
 
-//class MyRequest: URLRequestConvertible {
+// class MyRequest: URLRequestConvertible {
 //    func asURLRequest() throws -> URLRequest {
 //        var request = URLRequest(url: URL(string: "https://ip-api.com/json/")!)
 //        request.method = .get
 //        return request
 //    }
-//    
-//}
 //
-//struct DataResponseModel: Codable {
+// }
+//
+// struct DataResponseModel: Codable {
 //    let status, message: String
-//}
+// }
