@@ -1,0 +1,18 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "9iL-MO-fpR"; */
+"9iL-MO-fpR.title" = "Item";
+
+/* Class = "UILabel"; text = "Create your first note !"; ObjectID = "GZF-IE-xcc"; */
+"GZF-IE-xcc.text" = "Create your first note !";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Qf4-Th-hzC"; */
+"Qf4-Th-hzC.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Setting"; ObjectID = "ZLo-r8-wfM"; */
+"ZLo-r8-wfM.title" = "Setting";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "b6K-eu-VWT"; */
+"b6K-eu-VWT.title" = "Home";
+
+/* Class = "UILabel"; text = "Setting"; ObjectID = "nLT-U3-QpV"; */
+"nLT-U3-QpV.text" = "Setting";

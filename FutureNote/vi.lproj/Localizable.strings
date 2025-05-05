@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  FutureNote
+
+  Created by Other on 19/4/25.
+  
+*/
+"create_first_note" = "Hãy tạo một bản ghi chú!";
+"home_tab"= "Trang chủ";
+"setting_tab" = "Cài đặt";
+"language_setting_other" = "Ngôn ngữ";
+"rate_setting" = "Đánh giá";
+"contace_setting" = "Liên hệ";
+"check_update" = "Kiểm tra cập nhật";
+"restore" = "Khôi phục mua hàng";
+"chooselanguage" = "Chọn ngôn ngữ";
+"home_title" = "Ghi chú";
+"new_screen" = "Thêm mới";
+"edit_screen" = "Sửa";
+"labelDateTime" = "Ngày giờ:";
+"labelTitle" = "Tiêu đề:";
+"labelDescription" = "Mô tả:";
+"buttonSaveNote" = "Lưu";

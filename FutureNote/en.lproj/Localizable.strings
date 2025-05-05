@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  FutureNote
+
+  Created by Other on 19/4/25.
+  
+*/
+"create_first_note" = "Create your first note!";
+"home_tab"= "Home";
+"setting_tab" = "Setting";
+"language_setting_other" = "Language";
+"rate_setting" = "Rate us";
+"contace_setting" = "Contact";
+"check_update" = "Check update";
+"restore" = "Restore";
+"chooselanguage" = "Choose Language";
+"home_title" = "Notes";
+"new_screen" = "New";
+"edit_screen" = "Edit";
+"labelDateTime" = "Date time:";
+"labelTitle" = "Title:";
+"labelDescription" = "Description:";
+"buttonSaveNote" = "Save";
