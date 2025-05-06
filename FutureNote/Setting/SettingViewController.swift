@@ -28,16 +28,24 @@ extension UIColor {
     }
 }
 
-class SettingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var settingTitle: UILabel!
     var cells: [SettingModel] = SettingModel.allCases
+    
+    private lazy var lbTitle: UILabel = {
+        let lbTitle = UILabel()
+        lbTitle.font = R.font.poppinsMedium(size: 30)
+        lbTitle.textColor = .white
+        lbTitle.text = LocalizationManager.shared.localizedString(forKey: "setting_tab")
+        return lbTitle
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        settingTitle.text = LocalizationManager.shared.localizedString(forKey: "setting_tab")
-
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: lbTitle)
+        
         // Đăng ký nib
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell2")
@@ -46,16 +54,16 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
 
         tableView.backgroundColor = .clear
+        tableView.contentInset = .init(top: 20, left: 0, bottom: 0, right: 0)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: Notification.Name("languageDidChange"), object: nil)
-
-        // Do any additional setup after loading the view.
+        
+        setupNavigationBar()
     }
 
-    @objc func languageChanged() {
+    override func languageChanged() {
         tabBarController?.tabBar.items?[0].title = LocalizationManager.shared.localizedString(forKey: "home_tab")
         tabBarController?.tabBar.items?[2].title = LocalizationManager.shared.localizedString(forKey: "setting_tab")
-        settingTitle.text = LocalizationManager.shared.localizedString(forKey: "setting_tab")
+        lbTitle.text = LocalizationManager.shared.localizedString(forKey: "setting_tab")
         tableView.reloadData()
     }
 

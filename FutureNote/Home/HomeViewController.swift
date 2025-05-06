@@ -19,34 +19,34 @@ class Model {
 }
 
 class HomeViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
-    
     // empty view
     @IBOutlet var picCreateFirstNote: UIImageView!
     @IBOutlet var createFirstNote: UILabel!
-    
+
     @IBOutlet var tableView: UITableView!
-    
+
     var cells: [Model] = [
         Model(titleCell: "alo", createAt: "8/3/2025", content: "hello"),
         Model(titleCell: "cell 2", createAt: "23/3/2025", content: "this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content this is content "),
     ]
-    
-    
-    var hometitle: UILabel?
-    
+
+    private lazy var lbTitle: UILabel = {
+        let lbTitle = UILabel()
+        lbTitle.font = R.font.poppinsMedium(size: 30)
+        lbTitle.textColor = .white
+        lbTitle.text = LocalizationManager.shared.localizedString(forKey: "home_title")
+        return lbTitle
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        hometitle = UILabel()
-        hometitle?.font = R.font.poppinsMedium(size: 30)
-        hometitle?.textColor = .white
-        hometitle?.text = LocalizationManager.shared.localizedString(forKey: "home_title")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hometitle!)
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: lbTitle)
 
         setupTableView()
         setupTabbar()
         setupEmptyView()
+        setupNavigationBar()
 
         let tabbarVC = tabBarController?.viewControllers?[1] as? AddNoteViewController
         tabbarVC?.delegate = self
@@ -72,7 +72,7 @@ class HomeViewController: BaseViewController, UITableViewDataSource, UITableView
     private func setupTableView() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100 // số ước lượng, không quan trọng lắm
-        
+
         tableView.contentInset = .init(top: 20, left: 0, bottom: 0, right: 0)
 
         // Dang ky nib
@@ -86,7 +86,7 @@ class HomeViewController: BaseViewController, UITableViewDataSource, UITableView
 
     override func languageChanged() {
         createFirstNote.text = LocalizationManager.shared.localizedString(forKey: "create_first_note")
-        hometitle?.text = LocalizationManager.shared.localizedString(forKey: "home_title")
+        lbTitle.text = LocalizationManager.shared.localizedString(forKey: "home_title")
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

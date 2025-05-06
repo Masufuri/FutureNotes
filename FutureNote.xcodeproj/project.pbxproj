@@ -30,6 +30,8 @@
 		638A0C3B2DABFF9A00261A5E /* FutureNoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A0C3A2DABFF9A00261A5E /* FutureNoteUITestsLaunchTests.swift */; };
 		63971C202DB67EF6006900E8 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63971C1E2DB67EF6006900E8 /* LanguageTableViewCell.swift */; };
 		63971C212DB67EF6006900E8 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63971C1F2DB67EF6006900E8 /* LanguageTableViewCell.xib */; };
+		63CAC82E2DCA45C40084B10F /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CAC82D2DCA45C40084B10F /* CustomTabBar.swift */; };
+		63CAC8312DCA4D730084B10F /* AddNote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CAC8302DCA4D730084B10F /* AddNote.storyboard */; };
 		63E0C5F52DB3DFD0002F4013 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63E0C5F32DB3DFD0002F4013 /* Localizable.strings */; };
 		63E0C5F82DB3E42D002F4013 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E0C5F72DB3E42D002F4013 /* LocalizationManager.swift */; };
 		63E0C5FA2DB3F4F6002F4013 /* ChangeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E0C5F92DB3F4F6002F4013 /* ChangeLanguage.swift */; };
@@ -78,6 +80,8 @@
 		638A0C3A2DABFF9A00261A5E /* FutureNoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureNoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		63971C1E2DB67EF6006900E8 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		63971C1F2DB67EF6006900E8 /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
+		63CAC82D2DCA45C40084B10F /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		63CAC8302DCA4D730084B10F /* AddNote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNote.storyboard; sourceTree = "<group>"; };
 		63E0C5F22DB3DF44002F4013 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
 		63E0C5F42DB3DFD0002F4013 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63E0C5F62DB3DFE9002F4013 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				6304EE7A2DBA71CA002B0A95 /* AddNoteViewController.swift */,
+				63CAC8302DCA4D730084B10F /* AddNote.storyboard */,
 			);
 			path = AddNote;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 		638A0C162DABFF9800261A5E /* FutureNote */ = {
 			isa = PBXGroup;
 			children = (
+				63CAC82C2DCA45B60084B10F /* Tabbar */,
 				638A0C172DABFF9800261A5E /* AppDelegate.swift */,
 				638A0C192DABFF9800261A5E /* SceneDelegate.swift */,
 				638A0C1D2DABFF9800261A5E /* Main.storyboard */,
@@ -231,6 +237,14 @@
 				638A0C3A2DABFF9A00261A5E /* FutureNoteUITestsLaunchTests.swift */,
 			);
 			path = FutureNoteUITests;
+			sourceTree = "<group>";
+		};
+		63CAC82C2DCA45B60084B10F /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				63CAC82D2DCA45C40084B10F /* CustomTabBar.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		63FBF38C2DAEA54700E44C79 /* Setting */ = {
@@ -364,6 +378,7 @@
 			files = (
 				63971C212DB67EF6006900E8 /* LanguageTableViewCell.xib in Resources */,
 				638A0C212DABFF9A00261A5E /* Assets.xcassets in Resources */,
+				63CAC8312DCA4D730084B10F /* AddNote.storyboard in Resources */,
 				631278172DC1233B0039696E /* Poppins-Medium.ttf in Resources */,
 				6302054C2DB926F800AD309C /* HomeTableViewCell.xib in Resources */,
 				63E0C5F52DB3DFD0002F4013 /* Localizable.strings in Resources */,
@@ -398,6 +413,7 @@
 				6304EE7B2DBA71CA002B0A95 /* AddNoteViewController.swift in Sources */,
 				638A0C1C2DABFF9800261A5E /* HomeViewController.swift in Sources */,
 				6386A7F02DAFECCA0073DF70 /* CustomTableViewCell.swift in Sources */,
+				63CAC82E2DCA45C40084B10F /* CustomTabBar.swift in Sources */,
 				638A0C182DABFF9800261A5E /* AppDelegate.swift in Sources */,
 				638A0C1A2DABFF9800261A5E /* SceneDelegate.swift in Sources */,
 				634F377E2DC9126E00B921A8 /* BaseViewController.swift in Sources */,
