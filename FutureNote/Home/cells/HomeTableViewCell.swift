@@ -13,12 +13,14 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet var labelCreateAt:UILabel!
     @IBOutlet var labelContent:UILabel!
     @IBOutlet var arrowImage:UIImageView!
-    @IBOutlet var viewCell:UIView!
+    @IBOutlet var vContainer:UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewCell.layer.cornerRadius = 15
-        viewCell.layer.masksToBounds = false
+        
+        vContainer.layer.cornerRadius = 15
+        vContainer.layer.masksToBounds = false
+        
         labelContent.textAlignment = .left
         labelContent.numberOfLines = 3
         labelContent.contentMode = .top

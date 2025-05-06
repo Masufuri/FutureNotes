@@ -134,13 +134,10 @@ class AddNoteViewController: BaseViewController {
         let model: Model = Model(titleCell: title, createAt: dateTime, content: description)
         if let indexpath = indexpath {
             delegate?.edit(at: indexpath, model: model)
-            dismiss(animated: true)
         } else {
-            delegate?.receiveData(data: model)
-            tabBarController?.selectedIndex = 0
-            tfTitle.text = ""
-            textView.text = ""
+            NotificationCenter.default.post(name: .init(rawValue: "ADD_NOTE"), object: model)
         }
+        navigationController?.popViewController(animated: true)
     }
 
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {

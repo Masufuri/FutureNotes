@@ -47,9 +47,23 @@ class HomeViewController: BaseViewController, UITableViewDataSource, UITableView
         setupTabbar()
         setupEmptyView()
         setupNavigationBar()
+        setupObserver()
 
         let tabbarVC = tabBarController?.viewControllers?[1] as? AddNoteViewController
         tabbarVC?.delegate = self
+    }
+    
+    private func setupObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(actionAdd(_:)), name: .init(rawValue: "ADD_NOTE"), object: nil)
+    }
+    
+    @objc private func actionAdd(_ noti: Notification) {
+        guard let object = noti.object as? Model else {
+            return
+        }
+        cells.insert(object, at: 0)
+        tableView.reloadData()
+        tabBarController?.selectedIndex = 0
     }
 
     private func setupEmptyView() {
@@ -102,10 +116,11 @@ class HomeViewController: BaseViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let editNote = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
+        let editNote = UIStoryboard(name: "AddNote", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
         editNote.indexpath = indexPath
         editNote.delegate = self
-        present(editNote, animated: true)
+        tabBarController?.navigationItem.backButtonTitle = ""
+        tabBarController?.navigationController?.pushViewController(editNote, animated: true)
     }
 }
 

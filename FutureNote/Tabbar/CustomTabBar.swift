@@ -56,7 +56,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     @objc func centerButtonTapped() {
         let storyboard = UIStoryboard(name: "AddNote", bundle: .main)
         let viewController = storyboard.instantiateViewController(identifier: "AddNoteViewController")
-        navigationItem.backButtonTitle = ""
+        self.navigationItem.backButtonTitle = ""
         navigationController?.pushViewController(viewController, animated: true)
     }
     
